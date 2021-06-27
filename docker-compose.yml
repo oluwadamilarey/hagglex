@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  main:
+    container_name: interview-api
+    build:
+      context: .
+      target: development
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3100:3000
+      - 9229:9229
+    command: npm run start:dev
+    env_file:
+      - .env
+    networks:
+      - webnet
+    depends_on:
+      - redis
+  redis:
+    container_name: redis
+    image: redis:5
+    networks:
+      - webnet
+networks:
+  webnet:

@@ -1,0 +1,14 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type PageDatum {
+  PageTitle: String
+  Description: String
+  LargestImage: String
+}
+
+type Query {
+  getPage: PageDatum!
+  getPageInfo(url: String!): PageDatum!
+}

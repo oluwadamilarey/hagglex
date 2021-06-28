@@ -12,7 +12,15 @@ export class PageDataService {
   create(createPageDatumInput: CreatePageDatumInput) {
     return 'This action adds a new pageDatum';
   }
-
+  /**
+   *  Funtion to handle get request from getPage Resolsers
+   * by default returns pageData from w3schools.com
+   *
+   *
+   *
+   *
+   * @returns PageDatum Object
+   */
   async getPage(): Promise<PageDatum> {
     try {
       console.log(process.env.REDIS_URL);
@@ -65,6 +73,13 @@ export class PageDataService {
     }
   }
 
+  /**
+   * Funtion to handle get request from getPageWithUrl Resolsers
+   *
+   *
+   * @param url
+   * @returns PageDatum Object From Inputed Url
+   */
   async getPageWithUrl(url: string): Promise<PageDatum> {
     try {
       const cachedPage: PageDatum = await this.cacheManager.get(

@@ -23,7 +23,6 @@ export class PageDataService {
    */
   async getPage(): Promise<PageDatum> {
     try {
-      console.log(process.env.REDIS_URL);
       const cachedPage: PageDatum = await this.cacheManager.get(
         'https://www.w3schools.com',
       );

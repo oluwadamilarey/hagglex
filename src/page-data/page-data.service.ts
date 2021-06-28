@@ -15,6 +15,7 @@ export class PageDataService {
 
   async getPage(): Promise<PageDatum> {
     try {
+      console.log(process.env.REDIS_URL);
       const cachedPage: PageDatum = await this.cacheManager.get(
         'https://www.w3schools.com',
       );
@@ -112,9 +113,5 @@ export class PageDataService {
     } catch (e) {
       return e.message;
     }
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} pageDatum`;
   }
 }

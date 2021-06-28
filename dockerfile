@@ -2,7 +2,7 @@
 ######################## 
 ### DEVELOPMENT
 ########################
-FROM node:10
+FROM node:12
 
 RUN apt-get update
 
@@ -23,4 +23,6 @@ RUN npm install glob rimraf && npm install
 COPY . .
 
 EXPOSE 5000
+
 CMD [ "node", "dist/main" ]
+

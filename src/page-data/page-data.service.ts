@@ -82,7 +82,6 @@ export class PageDataService {
         `https://${url}`,
       );
       if (cachedPage) {
-        console.log(cachedPage);
         console.log('using cached Data');
         return cachedPage;
       }

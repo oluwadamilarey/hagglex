@@ -10,6 +10,8 @@ import { PageDataModule } from './page-data/page-data.module';
     PageDataModule,
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      introspection: true,
+      playground: true,
     }),
   ],
   controllers: [AppController],

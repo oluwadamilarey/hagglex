@@ -7,8 +7,7 @@ import * as redisStore from 'cache-manager-redis-store';
   imports: [
     CacheModule.register({
       store: redisStore,
-      host: 'redis',
-      port: 6379,
+      url: 'redis://:pcc716d34d0aaedb67c1d0143e2cf510b6dfa892fb96b3c94894cc72695fc600b@ec2-52-70-127-38.compute-1.amazonaws.com:26999',
     }),
   ],
   providers: [PageDataResolver, PageDataService],

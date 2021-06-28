@@ -9,9 +9,6 @@ import { PageDatum } from './entities/page-datum.entity';
 export class PageDataService {
   constructor(@Inject(CACHE_MANAGER) private cacheManager: Cache) {}
 
-  create(createPageDatumInput: CreatePageDatumInput) {
-    return 'This action adds a new pageDatum';
-  }
   /**
    *  Funtion to handle get request from getPage Resolsers
    * by default returns pageData from w3schools.com

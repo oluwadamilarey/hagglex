@@ -86,7 +86,9 @@ export class PageDataService {
         return cachedPage;
       }
 
-      const browser = await puppeteer.launch({ headless: true });
+      const browser = await puppeteer.launch({ 
+        headless: true,
+        args: ['--no-sandbox', '--disable-gpu'], });
       const page = await browser.newPage();
       await page.goto(`https://${url}`);
 
